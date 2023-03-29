@@ -1,6 +1,5 @@
 import { API_KEY } from '$env/static/private';
 import axios from 'axios';
-/** @type {import('./$types').PageLoad} */
 
 const options = {
 	method: 'GET',
