@@ -24,6 +24,6 @@ export async function load() {
 		let loading = false;
 		return { animes, initialData, loading };
 	} catch (error) {
-		console.log(error.message);
+		console.error(error.message);
 	}
 }
