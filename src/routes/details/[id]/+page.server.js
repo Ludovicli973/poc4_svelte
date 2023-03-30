@@ -16,7 +16,7 @@ export const load = async ({ params }) => {
 			res.json()
 		);
 	} catch (error) {
-		console.log(error);
+		console.error(error.message);
 	}
 	return { anime };
 };
