@@ -14,15 +14,16 @@ const options = {
 };
 
 export async function load() {
+	let animes;
+	let loading;
 	try {
 		const response = await axios.get(
 			'https://anime-db.p.rapidapi.com/anime?page=1&size=30',
 			options
 		);
-		let animes = response.data.data;
-		let initialData = response.data.data;
-		let loading = false;
-		return { animes, initialData, loading };
+		animes = response.data.data;
+		loading = false;
+		return { animes, loading };
 	} catch (error) {
 		console.error(error.message);
 	}
