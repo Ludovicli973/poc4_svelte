@@ -8,15 +8,15 @@ const options = {
 	}
 };
 
-export const load = ({ params }) => {
+export const load = async ({ params }) => {
 	const id = params.id;
 	let anime = {};
 	try {
-		anime = fetch(`https://anime-db.p.rapidapi.com/anime/by-id/${id}`, options).then((res) =>
+		anime = await fetch(`https://anime-db.p.rapidapi.com/anime/by-id/${id}`, options).then((res) =>
 			res.json()
 		);
 	} catch (error) {
-		console.log(error);
+		console.error(error.message);
 	}
 	return { anime };
 };

@@ -9,6 +9,7 @@
 		"test": "playwright test",
 		"test:jest": "jest src",
 		"test:watch": "npm run test -- --watch",
+		"test": "playwright test && playwright show-report",
 		"lint": "prettier --plugin-search-dir . --check .",
 		"format": "prettier --plugin-search-dir . --write ."
 	},
