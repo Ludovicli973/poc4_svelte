@@ -1,10 +1,14 @@
 <script>
-	import Card from '$lib/Card.svelte';
+	import Card from '../lib/Card.svelte';
 	import SearchBar from '../lib/SearchBar.svelte';
 	export let data;
-	let isLoading = true;
-	let animes = data.animes;
-	let initialData = data.animes;
+
+	let animes;
+	let isLoading;
+	let initialData;
+
+	animes = data.animes;
+	initialData = data.animes;
 	isLoading = data.loading;
 
 	const HandleSearch = (e) => {
