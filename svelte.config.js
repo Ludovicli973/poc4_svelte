@@ -28,10 +28,11 @@ const config = {
 		}),
 		paths: {
 			base: dev ? '' : '/poc4_svelte'
-		},
-		vite: {
-			envPrefix: ''
 		}
+	},
+	vite: {
+		envPrefix: ''
+
 	}
 };
 export default config;
