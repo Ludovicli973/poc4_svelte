@@ -25,10 +25,10 @@ const config = {
 			fallback: null,
 			precompress: false,
 			strict: true
-		})
-		// paths: {
-		// 	base: dev ? '' : '/poc4_svelte'
-		// }
+		}),
+		paths: {
+			base: dev ? '' : '/poc4_svelte'
+		}
 	},
 	vite: {
 		envPrefix: ''
