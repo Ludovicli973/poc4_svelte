@@ -1,4 +1,10 @@
-# create-svelte
+# Svelte
+
+## GitHub Pages 
+
+Here is the link to the github pages, in order to have an overview of the project [`GitHub Pages`](https://ludovicli973.github.io/poc4_svelte/)
+
+## create-svelte
 
 Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
 
