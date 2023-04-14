@@ -1,6 +1,6 @@
 <script>
 	export let anime;
-	import { base } from '$app/paths';
+	import { base } from './import-base';
 </script>
 
 <a href={`${base}/details/${anime._id}`}>

@@ -1,5 +1,5 @@
 <script>
-	import { base } from '$app/paths';
+	import { base } from './import-base';
 </script>
 
 <div class="w-full h-16 flex items-center space-x-4">
