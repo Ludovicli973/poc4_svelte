@@ -7,7 +7,10 @@ const config = {
 			pages: 'build',
 			assets: 'build',
 			fallback: null
-		})
+		}),
+		alias: {
+			'@src': './src/'
+		}
 	},
 	vite: {
 		envPrefix: ''
