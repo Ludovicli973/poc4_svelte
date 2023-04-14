@@ -1,14 +1,13 @@
 import { test, expect } from '@playwright/test';
 
 test.describe('navigation', () => {
-	// Avant chaque test, on charge la page de l'URL localhost:5174
 	test.beforeEach(async ({ page }) => {
-		await page.goto('http://localhost:5174/');
+		await page.goto(process.env.PROJECT_DEPLOYMENT_LINK);
 	});
 	// Test principal pour la navigation
 	test('main navigation', async ({ page }) => {
 		// On s'assure que l'URL est correcte
-		await expect(page).toHaveURL('http://localhost:5174/');
+		await expect(page).toHaveURL(process.env.PROJECT_DEPLOYMENT_LINK);
 		// On s'assure que les animés sont bien affichés avec un attribut alt correspondant
 		await expect(page.getByAltText('poster')).toHaveCount(30);
 		// On recherche un élément contenant le texte "Fullmetal" et on remplit ce champ de saisie
@@ -20,7 +19,7 @@ test.describe('navigation', () => {
 		// On clique sur l'animé affiché
 		await page.getByAltText('poster').click();
 		// On s'assure que l'URL a changé en conséquence
-		await expect(page).toHaveURL('http://localhost:5174/details/5114');
+		await expect(page).toHaveURL(process.env.PROJECT_DEPLOYMENT_LINK + 'details/5114');
 		// On s'assure que le texte "Fullmetal Alchemist: Brotherhood" est visible sur la page
 		await expect(page.getByText('Fullmetal Alchemist: Brotherhood', { exact: true })).toBeVisible();
 		// On s'assure que le texte complet est visible sur la page
