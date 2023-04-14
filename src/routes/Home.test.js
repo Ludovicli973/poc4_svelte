@@ -2,6 +2,7 @@ import { render, fireEvent, screen } from '@testing-library/svelte';
 import '@testing-library/jest-dom';
 import '@testing-library/user-event';
 import Home from './+page.svelte';
+import { vi } from 'vitest';
 
 const SERVER_DATA = [
 	{
@@ -669,6 +670,10 @@ const SERVER_DATA = [
 		type: 'TV'
 	}
 ];
+
+vi.mock('../lib/import-base', () => ({
+	base: ''
+}));
 
 test('in the home page, you should find the first anime Fullmetal Alchemist: Brotherhood', async () => {
 	render(Home, { data: { animes: SERVER_DATA, isLoading: false } });
