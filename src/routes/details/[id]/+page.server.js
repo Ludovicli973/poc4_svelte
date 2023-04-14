@@ -1,4 +1,4 @@
-import { API_KEY } from '$env/static/private';
+import { API_KEY } from '@src/lib/import-api-key.server';
 
 const options = {
 	method: 'GET',
