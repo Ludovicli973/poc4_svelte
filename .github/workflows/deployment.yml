@@ -64,5 +64,5 @@ jobs:
         id: lighthouse
         uses: treosh/lighthouse-ci-action@v9
         with:
-          urls: https://ludovicli973.github.io/trash-svelte/
+          urls: https://ludovicli973.github.io/poc4_svelte/
           uploadArtifacts: true
