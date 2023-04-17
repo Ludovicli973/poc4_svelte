@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  test:
+  unit-tests:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -19,7 +19,7 @@ jobs:
         run: npm run test
 
   build:
-    needs: test
+    needs: unit-tests
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -38,6 +38,7 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         with:
           path: './build'
+
   deploy:
     needs: build
     permissions:
@@ -51,3 +52,17 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
+
+  lighthouse:
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Audit URLs using Lighthouse
+        id: lighthouse
+        uses: treosh/lighthouse-ci-action@v9
+        with:
+          urls: https://ludovicli973.github.io/trash-svelte/
+          uploadArtifacts: true
